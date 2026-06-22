@@ -257,12 +257,18 @@ function cerrarVistaCarta(){
   modal.style.display = "none";
 }
 
-cerrarModal.addEventListener("click", cerrarVistaCarta);
+if (cerrarModal) {
+  cerrarModal.addEventListener("click", cerrarVistaCarta);
+}
 
-modal.addEventListener("click", function(e){
-  if(e.target === modal){
-    cerrarVistaCarta();
-  }
+if (modal) {
+  modal.addEventListener("click", function(e){
+    if(e.target === modal){
+      cerrarVistaCarta();
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const inicio = document.getElementById("inicio");
   const juego = document.getElementById("juego");
@@ -275,7 +281,4 @@ document.addEventListener("DOMContentLoaded", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
-});
-  comenzarJuego.addEventListener("click", () => {
-  alert("Botón funcionando");
 });
