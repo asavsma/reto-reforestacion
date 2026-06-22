@@ -263,4 +263,12 @@ modal.addEventListener("click", function(e){
   if(e.target === modal){
     cerrarVistaCarta();
   }
+const inicio = document.getElementById("inicio");
+const juego = document.getElementById("juego");
+const comenzarJuego = document.getElementById("comenzarJuego");
+
+comenzarJuego.addEventListener("click", () => {
+  inicio.style.display = "none";
+  juego.classList.remove("oculto");
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
