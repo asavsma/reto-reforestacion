@@ -276,4 +276,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+  comenzarJuego.addEventListener("click", () => {
+  alert("Botón funcionando");
 });
