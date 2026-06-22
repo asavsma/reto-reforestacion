@@ -108,8 +108,9 @@ carta.innerHTML = `
   <h2>${especie.nombre}</h2>
 
   <div class="botones-carta">
-      <button class="ver" onclick="verCarta(${index})">👁</button>
-      <button class="agregar" onclick="agregarEspecie(${index})">➕</button>
+      <button class="ver" onclick="verCarta(${index})">
+        🔎 Ver detalles
+      </button>
   </div>
 `;
 
@@ -242,7 +243,10 @@ function verCarta(index){
         <p>${especie.uso}</p>
       </div>
 
-      <button onclick="agregarEspecie(${index}); cerrarVistaCarta();">➕ Añadir especie</button>
+     <button class="seleccionar-modal"
+    onclick="agregarEspecie(${index}); cerrarVistaCarta();">
+    🌱 Seleccionar especie
+    </button>
     </div>
   `;
 
