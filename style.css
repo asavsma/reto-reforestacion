@@ -216,11 +216,13 @@ button:disabled{
 .modal-contenido{
   background:white;
   border-radius:28px;
-  max-width:430px;
-  width:100%;
-  padding:25px;
+  width:90%;
+  max-width:520px;
+  max-height:88vh;
+  padding:22px;
   position:relative;
   box-shadow:0 15px 40px rgba(0,0,0,.35);
+  overflow-y:auto;
 }
 
 .cerrar{
@@ -237,8 +239,10 @@ button:disabled{
 
 .modal-carta img{
   width:100%;
-  max-height:320px;
+  max-height:260px;
   object-fit:contain;
+  display:block;
+  margin:auto;
 }
 
 .modal-carta h2{
@@ -303,4 +307,16 @@ button:disabled{
 .botones-carta button{
   height:36px;
   font-size:13px;
+}
+.cerrar{
+  position:sticky;
+  top:0;
+  margin-left:auto;
+  display:block;
+  background:#d32f2f;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  padding:0;
+  z-index:10;
 }
