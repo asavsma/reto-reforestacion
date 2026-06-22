@@ -180,3 +180,27 @@ button:disabled{
     width:140px;
   }
 }
+.espacio{
+  position:relative;
+}
+
+.quitar{
+  position:absolute;
+  top:-10px;
+  right:-10px;
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  border:none;
+  background:#d32f2f;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+  font-size:14px;
+  padding:0;
+  margin:0;
+}
+
+.quitar:hover{
+  background:#b71c1c;
+}
