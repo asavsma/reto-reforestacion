@@ -329,3 +329,34 @@ button:disabled{
 .seleccionar-modal:hover{
   background:#1B5E20;
 }
+.oculto{
+  display:none;
+}
+
+.pantalla-inicio{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:30px;
+  background:linear-gradient(135deg, #dff5df, #f8f5ed);
+}
+
+.inicio-card{
+  max-width:720px;
+  background:white;
+  border-radius:30px;
+  padding:45px;
+  text-align:center;
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.inicio-card h1{
+  font-size:48px;
+  margin-bottom:20px;
+}
+
+.inicio-card p{
+  font-size:20px;
+  line-height:1.6;
+}
