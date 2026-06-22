@@ -264,17 +264,11 @@ button:disabled{
   margin-top:15px;
 }
 .botones-carta{
-  display:flex;
-  gap:8px;
   margin-top:10px;
 }
 
 .botones-carta button{
-  flex:1;
-  padding:8px;
-  font-size:13px;
-  border-radius:10px;
-  margin:0;
+  width:100%;
 }
 
 .ver{
