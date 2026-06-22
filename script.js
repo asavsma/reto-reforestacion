@@ -74,7 +74,10 @@ function agregarEspecie(index){
 function actualizarEspacios(){
   espacios.forEach((espacio, i) => {
     if(seleccion[i] !== undefined){
-      espacio.textContent = especies[seleccion[i]].nombre;
+      espacio.innerHTML = `
+        <span>${especies[seleccion[i]].nombre}</span>
+        <button class="quitar" onclick="quitarEspecie(${i})">✕</button>
+      `;
       espacio.classList.add("lleno");
     } else {
       espacio.textContent = "Vacío";
@@ -84,6 +87,11 @@ function actualizarEspacios(){
 
   contador.textContent = `Espacios ocupados: ${seleccion.length} / 3`;
   botonConfirmar.disabled = seleccion.length !== 3;
+}
+
+function quitarEspecie(posicion){
+  seleccion.splice(posicion, 1);
+  actualizarEspacios();
 }
 
 botonConfirmar.addEventListener("click", () => {
