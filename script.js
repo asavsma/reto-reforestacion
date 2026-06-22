@@ -103,11 +103,14 @@ especies.forEach((especie, index) => {
   const carta = document.createElement("div");
   carta.classList.add("carta");
 
-  carta.innerHTML = `
+carta.innerHTML = `
   <img src="${especie.imagen}" alt="${especie.nombre}">
   <h2>${especie.nombre}</h2>
-  <button class="ver" onclick="verCarta(${index})">👁 Ver carta</button>
-  <button class="agregar" onclick="agregarEspecie(${index})">➕ Añadir</button>
+
+  <div class="botones-carta">
+      <button class="ver" onclick="verCarta(${index})">👁</button>
+      <button class="agregar" onclick="agregarEspecie(${index})">➕</button>
+  </div>
 `;
 
   carta.addEventListener("click", () => agregarEspecie(index));
