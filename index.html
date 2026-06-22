@@ -1,51 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Reto de Reforestación</title>
-
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-<h1>🌳 Reto de Reforestación 🌳</h1>
+<section class="contenedor">
 
-<div class="cartas">
+  <h1>🌳 Reto de Reforestación</h1>
 
-<div class="carta">
-<img src="assets/anacahuita.png">
-<h2>Anacahuita</h2>
-</div>
+  <div class="mision">
+    <p class="etiqueta">📂 Expediente 01</p>
+    <h2>🔥 Incendio forestal en la Sierra Madre</h2>
+    <p>
+      Hace seis meses, un incendio forestal afectó una zona de la Sierra Madre Oriental en Nuevo León.
+      Aunque la vegetación comienza a recuperarse de forma natural, algunas áreas requieren apoyo mediante
+      acciones de restauración ecológica.
+    </p>
+    <p>
+      Como parte del Equipo de Restauración Ambiental, tu misión es asignar <strong>3 espacios de plantación</strong>.
+      Puedes repetir especies o combinarlas.
+    </p>
+  </div>
 
-<div class="carta">
-<img src="assets/mezquite.png">
-<h2>Mezquite</h2>
-</div>
+  <div class="espacios">
+    <div class="espacio">Vacío</div>
+    <div class="espacio">Vacío</div>
+    <div class="espacio">Vacío</div>
+  </div>
 
-<div class="carta">
-<img src="assets/sabino.png">
-<h2>Sabino</h2>
-</div>
+  <p id="contador">Espacios ocupados: 0 / 3</p>
 
-<div class="carta">
-<img src="assets/encino.png">
-<h2>Encino</h2>
-</div>
+  <div class="cartas" id="cartas"></div>
 
-<div class="carta">
-<img src="assets/pino.png">
-<h2>Pino Piñonero</h2>
-</div>
+  <button id="confirmar" disabled>Confirmar selección</button>
 
-<div class="carta">
-<img src="assets/huizache.png">
-<h2>Huizache</h2>
-</div>
+  <div id="bono" class="bono"></div>
 
-</div>
+  <div id="resultado" class="resultado"></div>
+
+</section>
 
 <script src="script.js"></script>
-
 </body>
 </html>
