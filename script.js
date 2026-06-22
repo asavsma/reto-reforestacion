@@ -272,3 +272,4 @@ comenzarJuego.addEventListener("click", () => {
   juego.classList.remove("oculto");
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+});
