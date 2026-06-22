@@ -1,40 +1,93 @@
 const especies = [
   {
-    nombre: "Anacahuita",
-    imagen: "assets/anacahuita.png",
-    puntos: 60,
-    texto: "Aporta valor ecológico y puede apoyar la restauración, aunque destaca más en zonas urbanas y espacios para polinizadores."
+  nombre: "Anacahuita",
+  imagen: "assets/anacahuita.png",
+  puntos: 60,
+  texto: "Aporta valor ecológico y puede apoyar la restauración, aunque destaca más en zonas urbanas y espacios para polinizadores.",
+  stats: {
+    sequia: "⭐⭐⭐⭐⭐",
+    calor: "⭐⭐⭐⭐⭐",
+    urbana: "⭐⭐⭐⭐⭐",
+    montana: "⭐⭐☆☆☆",
+    biodiversidad: "⭐⭐⭐⭐⭐"
   },
-  {
-    nombre: "Mezquite",
-    imagen: "assets/mezquite.png",
-    puntos: 55,
-    texto: "Es muy resistente a la sequía y al calor, aunque no es la especie más representativa para bosque de montaña."
+  uso: "Ideal para parques, camellones y corredores verdes urbanos."
+},
+
+{
+  nombre: "Mezquite",
+  imagen: "assets/mezquite.png",
+  puntos: 55,
+  texto: "Es muy resistente a la sequía y al calor, aunque no es la especie más representativa para bosques de montaña.",
+  stats: {
+    sequia: "⭐⭐⭐⭐⭐",
+    calor: "⭐⭐⭐⭐⭐",
+    urbana: "⭐⭐⭐⭐☆",
+    montana: "⭐⭐☆☆☆",
+    biodiversidad: "⭐⭐⭐⭐⭐"
   },
-  {
-    nombre: "Sabino",
-    imagen: "assets/sabino.png",
-    puntos: 35,
-    texto: "Es ideal para ríos, arroyos y zonas con humedad, pero no es la mejor opción para esta misión serrana."
+  uso: "Excelente para proyectos de reforestación en zonas áridas o con poca disponibilidad de agua."
+},
+
+{
+  nombre: "Sabino",
+  imagen: "assets/sabino.png",
+  puntos: 35,
+  texto: "Es ideal para ríos, arroyos y zonas con humedad, pero no es la mejor opción para esta misión serrana.",
+  stats: {
+    sequia: "⭐⭐☆☆☆",
+    calor: "⭐⭐⭐⭐☆",
+    urbana: "⭐⭐⭐☆☆",
+    montana: "⭐⭐☆☆☆",
+    biodiversidad: "⭐⭐⭐⭐⭐"
   },
-  {
-    nombre: "Encino",
-    imagen: "assets/encino.png",
-    puntos: 100,
-    texto: "Excelente elección. Es una especie clave para ecosistemas de montaña y favorece la recuperación del bosque."
+  uso: "Recomendado para restaurar ríos, arroyos y ecosistemas asociados al agua."
+},
+
+{
+  nombre: "Encino",
+  imagen: "assets/encino.png",
+  puntos: 100,
+  texto: "Excelente elección. Es una especie clave para ecosistemas de montaña y favorece la recuperación del bosque.",
+  stats: {
+    sequia: "⭐⭐⭐⭐☆",
+    calor: "⭐⭐⭐⭐☆",
+    urbana: "⭐⭐⭐☆☆",
+    montana: "⭐⭐⭐⭐⭐",
+    biodiversidad: "⭐⭐⭐⭐⭐"
   },
-  {
-    nombre: "Pino piñonero",
-    imagen: "assets/pino.png",
-    puntos: 95,
-    texto: "Muy buena elección. Se adapta a zonas serranas y contribuye a recuperar la cobertura vegetal."
+  uso: "Ideal para recuperar bosques de montaña y fortalecer la biodiversidad."
+},
+
+{
+  nombre: "Pino piñonero",
+  imagen: "assets/pino.png",
+  puntos: 95,
+  texto: "Muy buena elección. Se adapta a zonas serranas y contribuye a recuperar la cobertura vegetal.",
+  stats: {
+    sequia: "⭐⭐⭐⭐☆",
+    calor: "⭐⭐⭐☆☆",
+    urbana: "⭐⭐☆☆☆",
+    montana: "⭐⭐⭐⭐⭐",
+    biodiversidad: "⭐⭐⭐☆☆"
   },
-  {
-    nombre: "Huizache",
-    imagen: "assets/huizache.png",
-    puntos: 50,
-    texto: "Es resistente y valioso para polinizadores, pero se asocia más con zonas áridas o semiáridas."
-  }
+  uso: "Muy adecuado para proyectos de restauración en zonas serranas y semiáridas."
+},
+
+{
+  nombre: "Huizache",
+  imagen: "assets/huizache.png",
+  puntos: 50,
+  texto: "Es resistente y valioso para polinizadores, pero se asocia más con zonas áridas o semiáridas.",
+  stats: {
+    sequia: "⭐⭐⭐⭐⭐",
+    calor: "⭐⭐⭐⭐⭐",
+    urbana: "⭐⭐⭐☆☆",
+    montana: "⭐⭐☆☆☆",
+    biodiversidad: "⭐⭐⭐⭐⭐"
+  },
+  uso: "Ideal para restaurar zonas secas y promover la presencia de polinizadores."
+}
 ];
 
 let seleccion = [];
@@ -51,10 +104,11 @@ especies.forEach((especie, index) => {
   carta.classList.add("carta");
 
   carta.innerHTML = `
-    <img src="${especie.imagen}" alt="${especie.nombre}">
-    <h2>${especie.nombre}</h2>
-    <p>Agregar especie</p>
-  `;
+  <img src="${especie.imagen}" alt="${especie.nombre}">
+  <h2>${especie.nombre}</h2>
+  <button class="ver" onclick="verCarta(${index})">👁 Ver carta</button>
+  <button class="agregar" onclick="agregarEspecie(${index})">➕ Añadir</button>
+`;
 
   carta.addEventListener("click", () => agregarEspecie(index));
 
@@ -161,4 +215,45 @@ botonConfirmar.addEventListener("click", () => {
   `;
 
   resultado.scrollIntoView({ behavior: "smooth" });
+});
+const modal = document.getElementById("modal");
+const modalCarta = document.getElementById("modalCarta");
+const cerrarModal = document.getElementById("cerrarModal");
+
+function verCarta(index){
+  const especie = especies[index];
+
+  modalCarta.innerHTML = `
+    <div class="modal-carta">
+      <img src="${especie.imagen}" alt="${especie.nombre}">
+      <h2>${especie.nombre}</h2>
+
+      <div class="estadistica"><span>💧 Sequía</span><strong>${especie.stats.sequia}</strong></div>
+      <div class="estadistica"><span>☀️ Calor</span><strong>${especie.stats.calor}</strong></div>
+      <div class="estadistica"><span>🏙️ Urbana</span><strong>${especie.stats.urbana}</strong></div>
+      <div class="estadistica"><span>🏔️ Montaña</span><strong>${especie.stats.montana}</strong></div>
+      <div class="estadistica"><span>🐝 Biodiversidad</span><strong>${especie.stats.biodiversidad}</strong></div>
+
+      <div class="uso">
+        <strong>💡 Uso recomendado</strong>
+        <p>${especie.uso}</p>
+      </div>
+
+      <button onclick="agregarEspecie(${index}); cerrarVistaCarta();">➕ Añadir especie</button>
+    </div>
+  `;
+
+  modal.style.display = "flex";
+}
+
+function cerrarVistaCarta(){
+  modal.style.display = "none";
+}
+
+cerrarModal.addEventListener("click", cerrarVistaCarta);
+
+modal.addEventListener("click", function(e){
+  if(e.target === modal){
+    cerrarVistaCarta();
+  }
 });
