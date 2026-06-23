@@ -447,7 +447,7 @@ function mostrarPantallaFinal(){
 
       <p class="mensaje-final">
         Has completado todos los expedientes del Reto de Reforestación.
-        A lo largo de estas misiones descubriste que cada ecosistema tiene necesidades diferentes
+        A lo largo de estas misiones descubriste que cada árbol tiene caracteristicas distintas
         y que la selección adecuada de especies nativas es fundamental para el éxito de cualquier
         proyecto de restauración ambiental.
       </p>
@@ -474,7 +474,7 @@ function mostrarPantallaFinal(){
         <p>
           Las especies nativas están adaptadas al clima, los suelos y las condiciones ambientales
           de Nuevo León. Además, proporcionan alimento y refugio para la fauna local, favorecen la
-          biodiversidad y suelen requerir menos mantenimiento y agua que especies introducidas.
+          biodiversidad y requieren menos mantenimiento y agua que especies introducidas.
         </p>
         <p>
           Por ello, elegir árboles y plantas nativas contribuye a construir ecosistemas más resilientes,
@@ -489,7 +489,7 @@ function mostrarPantallaFinal(){
           <li>La restauración requiere seleccionar especies adecuadas para cada ambiente.</li>
           <li>Los árboles ayudan a reducir la isla de calor urbana.</li>
           <li>Las especies nativas favorecen a los polinizadores y a la fauna silvestre.</li>
-          <li>La biodiversidad fortalece la resiliencia de los ecosistemas.</li>
+          <li>La diversidad de especies fortalece la resiliencia de los ecosistemas.</li>
         </ul>
       </div>
 
