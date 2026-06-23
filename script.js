@@ -89,6 +89,7 @@ const expedientes = [
   {
     titulo: "🔥 Incendio forestal en la Sierra Madre",
     etiqueta: "📂 Expediente 01",
+    espacios: 3,
     historia: `
       Hace seis meses, un incendio forestal afectó una zona de la Sierra Madre Oriental en Nuevo León.
       Aunque la vegetación comienza a recuperarse de forma natural, algunas áreas requieren apoyo mediante
@@ -114,6 +115,7 @@ const expedientes = [
   {
     titulo: "🏙️ Isla de calor urbana",
     etiqueta: "📂 Expediente 02",
+    espacios: 3,
     historia: `
       Durante los últimos años, las zonas urbanas de Nuevo León han registrado temperaturas cada vez más elevadas.
       <br><br>
@@ -137,7 +139,34 @@ const expedientes = [
       pino: 35,
       huizache: 85
     }
+  }, 
+
+{
+  titulo: "🐝 Jardín para polinizadores",
+  etiqueta: "📂 Expediente 03",
+  espacios: 2,
+  historia: `
+    Un municipio de Nuevo León busca desarrollar un jardín polinizador para favorecer la presencia de abejas, mariposas y otros polinizadores nativos.
+    <br><br>
+    Debido al espacio disponible, únicamente es posible plantar dos especies. El objetivo es seleccionar aquellas que proporcionen alimento, refugio y condiciones adecuadas para fortalecer las poblaciones de polinizadores y contribuir a la biodiversidad local.
+    <br><br>
+    Como parte del Equipo de Restauración Ambiental, tu misión es elegir las especies nativas más adecuadas para este proyecto.
+  `,
+  prioridades: [
+    "🐝 Beneficio para polinizadores",
+    "🌼 Producción de flores y recursos alimenticios",
+    "☀️ Adaptación al clima local",
+    "🌿 Diversidad biológica"
+  ],
+  puntos: {
+    anacahuita: 100,
+    mezquite: 85,
+    sabino: 45,
+    encino: 70,
+    pino: 35,
+    huizache: 95
   }
+}
 ];
 
 let expedienteActual = 0;
@@ -148,7 +177,7 @@ const contador = document.getElementById("contador");
 const botonConfirmar = document.getElementById("confirmar");
 const resultado = document.getElementById("resultado");
 const bono = document.getElementById("bono");
-const espacios = document.querySelectorAll(".espacio");
+let espacios = document.querySelectorAll(".espacio");
 const modal = document.getElementById("modal");
 const modalCarta = document.getElementById("modalCarta");
 const cerrarModal = document.getElementById("cerrarModal");
@@ -173,6 +202,7 @@ function cargarExpediente(){
   seleccion = [];
   bono.style.display = "none";
   resultado.style.display = "none";
+  crearEspacios(expediente.espacios);
   actualizarEspacios();
 }
 
@@ -199,16 +229,29 @@ function renderCartas(){
 }
 
 function agregarEspecie(index){
-  if(seleccion.length >= 3){
-    alert("Ya ocupaste los 3 espacios de plantación.");
-    return;
-  }
+ const limite = expedientes[expedienteActual].espacios;
+
+if(seleccion.length >= limite){
+  alert(`Ya ocupaste los ${limite} espacios de plantación.`);
+  return;
+}
 
   seleccion.push(index);
   actualizarEspacios();
 }
+function crearEspacios(cantidad){
+  const contenedorEspacios = document.querySelector(".espacios");
+  contenedorEspacios.innerHTML = "";
 
+  for(let i = 0; i < cantidad; i++){
+    const espacio = document.createElement("div");
+    espacio.classList.add("espacio");
+    espacio.textContent = "Vacío";
+    contenedorEspacios.appendChild(espacio);
+  }
+}
 function actualizarEspacios(){
+  espacios = document.querySelectorAll(".espacio");
   espacios.forEach((espacio, i) => {
     if(seleccion[i] !== undefined){
       espacio.innerHTML = `
@@ -222,8 +265,10 @@ function actualizarEspacios(){
     }
   });
 
-  contador.textContent = `Espacios ocupados: ${seleccion.length} / 3`;
-  botonConfirmar.disabled = seleccion.length !== 3;
+  const limite = expedientes[expedienteActual].espacios;
+
+contador.textContent = `Espacios ocupados: ${seleccion.length} / ${limite}`;
+botonConfirmar.disabled = seleccion.length !== limite;
 }
 
 function quitarEspecie(posicion){
