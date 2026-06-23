@@ -360,3 +360,21 @@ button:disabled{
   font-size:20px;
   line-height:1.6;
 }
+.prioridades{
+  background:#F1F8E9;
+  border-left:6px solid #7CB342;
+  border-radius:18px;
+  padding:18px;
+  margin-top:20px;
+}
+
+.prioridades h3{
+  margin-top:0;
+  color:#2E7D32;
+}
+
+.prioridad{
+  margin:10px 0;
+  font-weight:600;
+  font-size:16px;
+}
