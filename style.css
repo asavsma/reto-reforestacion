@@ -378,3 +378,23 @@ button:disabled{
   font-weight:600;
   font-size:16px;
 }
+.tarjeta-insignia{
+  background:linear-gradient(135deg,#fff8e1,#fff3cd);
+  border:3px solid #fbc02d;
+  border-radius:24px;
+  padding:22px;
+  margin-top:20px;
+  text-align:center;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+.tarjeta-insignia h2{
+  color:#ef6c00;
+  margin-top:0;
+}
+
+.tarjeta-insignia h3{
+  font-size:28px;
+  color:#2E7D32;
+  margin:10px 0;
+}
