@@ -321,7 +321,18 @@ botonConfirmar.addEventListener("click", () => {
   } else {
     nivel = "⚠️ Restauración insuficiente";
   }
+let insignia = "";
+let descripcionInsignia = "";
 
+if(expedienteActual === 0){
+  insignia = "🔥 Bosque Resiliente";
+  descripcionInsignia = "Ayudaste a restaurar un ecosistema afectado por incendios forestales.";
+}
+
+if(expedienteActual === 1){
+  insignia = "🏙️ Ciudad Fresca";
+  descripcionInsignia = "Diseñaste una estrategia de arborización para reducir la isla de calor urbana.";
+}
   const haySiguiente = expedienteActual < expedientes.length - 1;
 
   resultado.style.display = "block";
@@ -333,6 +344,13 @@ botonConfirmar.addEventListener("click", () => {
     <p><strong>Bono por diversidad:</strong> ${puntosBono} puntos</p>
     ${detalle}
     <p><strong>Aprendizaje:</strong> La especie adecuada depende del contexto y de los objetivos del proyecto.</p>
+    <div class="tarjeta-insignia">
+  <h2>🏆 Insignia desbloqueada</h2>
+
+  <h3>${insignia}</h3>
+
+  <p>${descripcionInsignia}</p>
+</div>
 
     ${haySiguiente ? `<button onclick="siguienteExpediente()">Continuar al siguiente expediente</button>` : `<h3>🏆 Juego completado</h3>`}
   `;
