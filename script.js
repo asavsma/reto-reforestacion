@@ -114,8 +114,6 @@ carta.innerHTML = `
   </div>
 `;
 
-  carta.addEventListener("click", () => agregarEspecie(index));
-
   contenedorCartas.appendChild(carta);
 });
 
