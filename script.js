@@ -397,7 +397,10 @@ if(expedienteActual === 1){
   <p>${descripcionInsignia}</p>
 </div>
 
-    ${haySiguiente ? `<button onclick="siguienteExpediente()">Continuar al siguiente expediente</button>` : `<h3>🏆 Juego completado</h3>`}
+    ${haySiguiente 
+  ? `<button onclick="siguienteExpediente()">Continuar al siguiente expediente</button>` 
+  : `<button onclick="mostrarPantallaFinal()">Ver resultado final</button>`
+}
   `;
 
   resultado.scrollIntoView({ behavior: "smooth" });
@@ -437,3 +440,75 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCartas();
   cargarExpediente();
 });
+function mostrarPantallaFinal(){
+  document.getElementById("juego").innerHTML = `
+    <section class="pantalla-final">
+      <h1>🏆 Maestro Reforestador de Nuevo León</h1>
+
+      <p class="mensaje-final">
+        Has completado todos los expedientes del Reto de Reforestación.
+        A lo largo de estas misiones descubriste que cada ecosistema tiene necesidades diferentes
+        y que la selección adecuada de especies nativas es fundamental para el éxito de cualquier
+        proyecto de restauración ambiental.
+      </p>
+
+      <div class="insignias-finales">
+        <div class="insignia-final">
+          <h3>🔥 Bosque Resiliente</h3>
+          <p>Restauración posterior a un incendio forestal.</p>
+        </div>
+
+        <div class="insignia-final">
+          <h3>🏙️ Ciudad Fresca</h3>
+          <p>Reducción de la isla de calor urbana.</p>
+        </div>
+
+        <div class="insignia-final">
+          <h3>🐝 Aliado de los Polinizadores</h3>
+          <p>Promoción de biodiversidad y polinizadores nativos.</p>
+        </div>
+      </div>
+
+      <div class="bloque-final">
+        <h2>🌳 ¿Por qué utilizar especies nativas?</h2>
+        <p>
+          Las especies nativas están adaptadas al clima, los suelos y las condiciones ambientales
+          de Nuevo León. Además, proporcionan alimento y refugio para la fauna local, favorecen la
+          biodiversidad y suelen requerir menos mantenimiento y agua que especies introducidas.
+        </p>
+        <p>
+          Por ello, elegir árboles y plantas nativas contribuye a construir ecosistemas más resilientes,
+          ciudades más frescas y comunidades mejor preparadas ante los retos del cambio climático.
+        </p>
+      </div>
+
+      <div class="bloque-final">
+        <h2>📚 Lo que aprendiste</h2>
+        <ul>
+          <li>No existe un árbol perfecto para todas las situaciones.</li>
+          <li>La restauración requiere seleccionar especies adecuadas para cada ambiente.</li>
+          <li>Los árboles ayudan a reducir la isla de calor urbana.</li>
+          <li>Las especies nativas favorecen a los polinizadores y a la fauna silvestre.</li>
+          <li>La biodiversidad fortalece la resiliencia de los ecosistemas.</li>
+        </ul>
+      </div>
+
+      <div class="resumen-final">
+        <h2>📊 Resumen de tu recorrido</h2>
+        <p><strong>Expedientes completados:</strong> 3 de 3</p>
+        <p><strong>Insignias obtenidas:</strong> 3</p>
+        <p><strong>Especies nativas exploradas:</strong> 6</p>
+      </div>
+
+      <div class="botones-finales">
+        <button onclick="location.reload()">🔄 Jugar nuevamente</button>
+
+        <a href="https://www.nl.gob.mx/es/publicaciones/listado-de-arboles-y-plantas-nativas-del-estado-de-nuevo-leon" target="_blank">
+          🌿 Explora los árboles y plantas nativas de Nuevo León
+        </a>
+      </div>
+    </section>
+  `;
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
