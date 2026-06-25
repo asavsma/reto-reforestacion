@@ -382,6 +382,10 @@ if(expedienteActual === 1){
   insignia = "🏙️ Ciudad Fresca";
   descripcionInsignia = "Diseñaste una estrategia de arborización para reducir la isla de calor urbana.";
 }
+if(expedienteActual === 2){
+  insignia = "🐝 Aliado de los Polinizadores";
+  descripcionInsignia = "Creaste un jardín con especies nativas que favorece la presencia de abejas, mariposas y otros polinizadores.";
+}
   const haySiguiente = expedienteActual < expedientes.length - 1;
 
   resultado.style.display = "block";
@@ -450,7 +454,7 @@ function mostrarPantallaFinal(){
 
       <p class="mensaje-final">
         Has completado todos los expedientes del Reto de Reforestación.
-        A lo largo de estas misiones descubriste que cada árbol tiene caracteristicas distintas
+        A lo largo de estas misiones descubriste que cada árbol tiene características distintas
         y que la selección adecuada de especies nativas es fundamental para el éxito de cualquier
         proyecto de restauración ambiental.
       </p>
@@ -514,10 +518,16 @@ function mostrarPantallaFinal(){
   `;
 
   window.scrollTo({ top: 0, behavior: "smooth" });
-  function actualizarProgreso(){
+}
+
+function actualizarProgreso(){
   const pasos = document.querySelectorAll(".paso");
   const lineas = document.querySelectorAll(".linea");
   const textoProgreso = document.getElementById("textoProgreso");
+
+  if(!textoProgreso || pasos.length === 0){
+    return;
+  }
 
   textoProgreso.textContent = `Expediente ${expedienteActual + 1} de ${expedientes.length}`;
 
@@ -542,5 +552,4 @@ function mostrarPantallaFinal(){
       linea.classList.add("completada");
     }
   });
-}
 }
