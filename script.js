@@ -207,6 +207,7 @@ function cargarExpediente(){
   resultado.style.display = "none";
   crearEspacios(expediente.espacios);
   actualizarEspacios();
+  actualizarProgreso();
 }
 
 function renderCartas(){
@@ -513,4 +514,33 @@ function mostrarPantallaFinal(){
   `;
 
   window.scrollTo({ top: 0, behavior: "smooth" });
+  function actualizarProgreso(){
+  const pasos = document.querySelectorAll(".paso");
+  const lineas = document.querySelectorAll(".linea");
+  const textoProgreso = document.getElementById("textoProgreso");
+
+  textoProgreso.textContent = `Expediente ${expedienteActual + 1} de ${expedientes.length}`;
+
+  pasos.forEach((paso, index) => {
+    paso.classList.remove("activo", "completado");
+
+    if(index < expedienteActual){
+      paso.classList.add("completado");
+      paso.textContent = "✓";
+    } else if(index === expedienteActual){
+      paso.classList.add("activo");
+      paso.textContent = index + 1;
+    } else {
+      paso.textContent = index + 1;
+    }
+  });
+
+  lineas.forEach((linea, index) => {
+    linea.classList.remove("completada");
+
+    if(index < expedienteActual){
+      linea.classList.add("completada");
+    }
+  });
+}
 }
