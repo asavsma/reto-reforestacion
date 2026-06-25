@@ -103,6 +103,7 @@ const expedientes = [
       "🐝 Recuperación de biodiversidad",
       "💧 Resistencia a periodos secos"
     ],
+    aprendizaje: "La restauración después de un incendio requiere especies adaptadas a ecosistemas de montaña, capaces de favorecer la recuperación del suelo y la biodiversidad.",
     puntos: {
       anacahuita: 60,
       mezquite: 55,
@@ -131,6 +132,7 @@ const expedientes = [
       "🐝 Beneficio para polinizadores",
       "🏙️ Adaptación a entornos urbanos"
     ],
+    aprendizaje: "La reforestación urbana con especies nativas ayuda a reducir la isla de calor, mejorar la sensacion térmica y fortalecer la biodiversidad en la ciudad.",
     puntos: {
       anacahuita: 100,
       mezquite: 90,
@@ -158,6 +160,7 @@ const expedientes = [
     "☀️ Adaptación al clima local",
     "🌿 Diversidad biológica"
   ],
+  aprendizaje: "Elegir plantas nativas adaptadas al clima local es fundamental para crear jardines que brinden alimento, refugio y sitios de reproducción para los polinizadores.",
   puntos: {
     anacahuita: 100,
     mezquite: 85,
@@ -388,8 +391,7 @@ if(expedienteActual === 1){
     <p><strong>Subtotal por especies:</strong> ${subtotal} puntos</p>
     <p><strong>Bono por diversidad:</strong> ${puntosBono} puntos</p>
     ${detalle}
-    <p><strong>Aprendizaje:</strong> La especie adecuada depende del contexto y de los objetivos del proyecto.</p>
-    <div class="tarjeta-insignia">
+  <p><strong>Aprendizaje:</strong> ${expediente.aprendizaje}</p>    <div class="tarjeta-insignia">
   <h2>🏆 Insignia desbloqueada</h2>
 
   <h3>${insignia}</h3>
