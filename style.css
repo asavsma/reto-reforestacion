@@ -488,3 +488,71 @@ button:disabled{
 .botones-finales a:hover{
   background:#1B5E20;
 }
+.barra-progreso{
+  background:#ffffff;
+  border-radius:22px;
+  padding:18px;
+  margin:20px 0 25px;
+  box-shadow:0 6px 16px rgba(0,0,0,.12);
+  text-align:center;
+}
+
+#textoProgreso{
+  font-weight:bold;
+  color:#2E7D32;
+  margin-bottom:14px;
+}
+
+.pasos{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  max-width:500px;
+  margin:auto;
+}
+
+.paso{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:#CFD8DC;
+  color:#455A64;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  border:3px solid #B0BEC5;
+}
+
+.paso.activo{
+  background:#7CB342;
+  color:white;
+  border-color:#2E7D32;
+}
+
+.paso.completado{
+  background:#2E7D32;
+  color:white;
+  border-color:#1B5E20;
+}
+
+.linea{
+  width:90px;
+  height:5px;
+  background:#CFD8DC;
+}
+
+.linea.completada{
+  background:#7CB342;
+}
+
+@media(max-width:600px){
+  .linea{
+    width:55px;
+  }
+
+  .paso{
+    width:34px;
+    height:34px;
+  }
+}
