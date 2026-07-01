@@ -413,17 +413,13 @@ button:disabled{
 
     padding:60px 30px;
 
-    background:
-        linear-gradient(rgba(255,255,255,.80),
-                        rgba(255,255,255,.80)),
-        url("assets/fondo-final.png");
+    background-image:url("assets/fondo-final.png");
 
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
 
 }
-
 .pantalla-final h1{
   color:#2E7D32;
   font-size:42px;
