@@ -584,3 +584,19 @@ button:disabled{
     background-repeat:no-repeat;
 
 }
+.mision,
+.resultado,
+.bono,
+.bloque-final,
+.resumen-final,
+.insignia-final{
+
+    background:#F1F8E9;
+
+    border:2px solid #A5D6A7;
+
+    border-radius:20px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.20);
+
+}
