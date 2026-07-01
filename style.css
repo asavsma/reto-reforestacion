@@ -352,12 +352,21 @@ button:disabled{
 }
 
 .inicio-card{
+
   max-width:720px;
-  background:white;
-  border-radius:30px;
+
+  background:#EFE8D4;
+
+  border-left:10px solid #2E7D32;
+
+  border-radius:25px;
+
   padding:45px;
+
   text-align:center;
-  box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+  box-shadow:0 15px 35px rgba(0,0,0,.30);
+
 }
 
 .inicio-card h1{
