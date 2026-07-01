@@ -216,9 +216,7 @@ function cargarExpediente(){
 ];
 
 document.getElementById("juego").style.backgroundImage =
-`linear-gradient(rgba(255,255,255,.82), rgba(255,255,255,.82)),
- url('${fondos[expedienteActual]}')`;
-}
+`url('${fondos[expedienteActual]}')`;
 
 function renderCartas(){
   contenedorCartas.innerHTML = "";
