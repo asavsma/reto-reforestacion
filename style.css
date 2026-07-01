@@ -408,11 +408,20 @@ button:disabled{
   margin:10px 0;
 }
 .pantalla-final{
-  background:white;
-  border-radius:30px;
-  padding:35px;
-  box-shadow:0 12px 30px rgba(0,0,0,.15);
-  text-align:center;
+
+    min-height:100vh;
+
+    padding:60px 30px;
+
+    background:
+        linear-gradient(rgba(255,255,255,.80),
+                        rgba(255,255,255,.80)),
+        url("assets/fondo-final.png");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
 }
 
 .pantalla-final h1{
