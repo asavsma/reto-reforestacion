@@ -208,6 +208,16 @@ function cargarExpediente(){
   crearEspacios(expediente.espacios);
   actualizarEspacios();
   actualizarProgreso();
+
+  const fondos = [
+    "assets/fondo-expediente1.png",
+    "assets/fondo-expediente2.png",
+    "assets/fondo-expediente3.png"
+];
+
+document.getElementById("juego").style.backgroundImage =
+`linear-gradient(rgba(255,255,255,.82), rgba(255,255,255,.82)),
+ url('${fondos[expedienteActual]}')`;
 }
 
 function renderCartas(){
