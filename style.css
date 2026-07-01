@@ -334,12 +334,21 @@ button:disabled{
 }
 
 .pantalla-inicio{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:30px;
-  background:linear-gradient(135deg, #dff5df, #f8f5ed);
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+        linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
+        url("assets/fondo-inicio.png");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
 }
 
 .inicio-card{
